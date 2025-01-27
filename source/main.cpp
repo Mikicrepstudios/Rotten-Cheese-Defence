@@ -3,6 +3,7 @@
 #include "SDL.h"
 
 #include "mf/core.h"
+#include "mf/colors.h"
 #include "mf/graphics.h"
 #include "mf/logic.h"
 #include "mf/sfx.h"
@@ -16,7 +17,7 @@ int main(int argc, char* argv[]) {
     bool running = true;
 
     // MUST USE LINE BELOW
-    core::printver(1);
+    core::printver(2);
     std::cout << "-----Rotten Cheese Defence------"<< std::endl
 			  << "-------Ver: D E V---------------"<< std::endl
 			  << "Copyright Mikicrep Studios 2025" << std::endl;
@@ -102,6 +103,8 @@ int main(int argc, char* argv[]) {
 
         // Draw stuff
         graphics::DrawCheese(window, game);
+        draw::DrawTextureRect(window.renderer, {0, window.height - 200, window.width, 200}, mainAssets.face);
+        draw::DrawLine(window.renderer, {window.mouse.x, window.mouse.y}, {window.width / 2, window.height - 100}, 10, colors::pink);
 
         // Finish frame
         core::UpdateTimers();
