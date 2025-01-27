@@ -12,9 +12,12 @@ int main(int argc, char* argv[]) {
 
     // MUST USE LINE BELOW
     core::printver(1);
+    std::cout << "-----Rotten Cheese Defence------"     << std::endl
+			  << "-------Ver: D E V---------------"     << std::endl
+			  << "Copyright Mikicrep Studios 2025" << std::endl;
 
     // Main stuff
-    const std::string title = "Mikicrep Framework";
+    const std::string title = "Rotten Cheese Defence";
     core::MF_Window window = {};
     SDL_Event event = {};
 
@@ -83,7 +86,7 @@ int main(int argc, char* argv[]) {
         SDL_RenderClear(window.renderer);
 
         // Draw stuff
-        core::miki(window);
+        draw::DrawRect(window.renderer, {50, 50, 50, 50}, {255, 0, 0});
 
         // Finish frame
         core::UpdateTimers();
