@@ -44,6 +44,9 @@ int main(int argc, char* argv[]) {
     // Clear map
     logic::ClearMap(game);
 
+    // Add timers
+    core::AddTimer(1000, [&game]() { logic::RotCheese(game); }, true);
+
     while(running) {
         // Prepare next frame
         SDL_GetMouseState(&window.mouse.x, &window.mouse.y);

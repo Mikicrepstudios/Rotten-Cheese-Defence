@@ -4,4 +4,6 @@
 
 namespace logic {
     void ClearMap(data::Game& game);
+
+    void RotCheese(data::Game &game);
 }

@@ -1,13 +1,21 @@
+#include "mf/core.h"
 #include "mf/logic.h"
 
 #include "data.h"
 
-void RotCheese(data::Game &game) {
-    int x = logic::GenRanNum(0, 7);
-    int y = logic::GenRanNum(0, 1);
+#include <iostream>
 
-    game.map[x][y].state += 1;
+namespace logic {
+    void RotCheese(data::Game &game) {
+        int x = logic::GenRanNum(0, 7);
+        int y = logic::GenRanNum(0, 1);
 
-    //if(game.map[x][y].state == 3)
-        // Add timer here to remove cheese
+        if(game.map[x][y].state != 3)
+            game.map[x][y].state += 1;
+
+        std::cout << "Cheese at " << x << ", " << y << " is now " << game.map[x][y].state << std::endl;
+
+        //if(game.map[x][y].state == 3)
+            // Add timer here to remove cheese
+    }
 }
