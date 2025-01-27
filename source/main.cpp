@@ -32,10 +32,14 @@ int main(int argc, char* argv[]) {
 
     // Init structs
     data::Game game = {};
+
+    // Init textue structs
     assets::Main mainAssets = {};
+    assets::Cheese cheeseAssets = {};
 
     // Load assets
     assets::LoadMainAssets(window, mainAssets);
+    assets::LoadCheeseAssets(window, cheeseAssets);
 
     // Clear map
     logic::ClearMap(game);
