@@ -1,1 +1,1 @@
-wc -l miki-framework/* miki-framework/*/*
+wc -l source/* source/*/*
