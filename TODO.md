@@ -2,3 +2,4 @@
 - Cheese disappearing
 - Game over screen
 - Scoring system
+- Remove logging in rottingcheese()
