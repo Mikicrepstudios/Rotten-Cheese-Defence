@@ -7,6 +7,9 @@
 #include "mf/logic.h"
 #include "mf/sfx.h"
 
+#include "headers/data.h"
+#include "headers/logic.h"
+
 int main(int argc, char* argv[]) {
     bool running = true;
 
@@ -23,6 +26,12 @@ int main(int argc, char* argv[]) {
 
     // Create window
     if(core::InitWindow(window, title, 1280, 800) == false) running = false;
+
+    // Init structs
+    data::Game game = {};
+
+    // Clear map
+    logic::ClearMap(game);
 
     while(running) {
         // Prepare next frame
