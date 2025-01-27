@@ -15,4 +15,5 @@ namespace data {
 1 - Mostly rotten cheese
 2 - Little rotten cheese
 3 - Fresh cheese
+4 - No cheese / Gone
  */
