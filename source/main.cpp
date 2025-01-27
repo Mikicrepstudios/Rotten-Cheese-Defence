@@ -15,8 +15,8 @@ int main(int argc, char* argv[]) {
 
     // MUST USE LINE BELOW
     core::printver(1);
-    std::cout << "-----Rotten Cheese Defence------"     << std::endl
-			  << "-------Ver: D E V---------------"     << std::endl
+    std::cout << "-----Rotten Cheese Defence------"<< std::endl
+			  << "-------Ver: D E V---------------"<< std::endl
 			  << "Copyright Mikicrep Studios 2025" << std::endl;
 
     // Main stuff
