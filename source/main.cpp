@@ -7,6 +7,7 @@
 #include "mf/logic.h"
 #include "mf/sfx.h"
 
+#include "headers/assets.h"
 #include "headers/data.h"
 #include "headers/graphics.h"
 #include "headers/logic.h"
@@ -30,6 +31,10 @@ int main(int argc, char* argv[]) {
 
     // Init structs
     data::Game game = {};
+    assets::Main mainAssets = {};
+
+    // Load assets
+    assets::LoadMainAssets(window, mainAssets);
 
     // Clear map
     logic::ClearMap(game);
