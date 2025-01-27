@@ -1,0 +1,9 @@
+#pragma once
+
+#include "mf/core.h"
+
+#include "data.h"
+
+namespace graphics {
+    void DrawCheese(core::MF_Window window, data::Game &game);
+}

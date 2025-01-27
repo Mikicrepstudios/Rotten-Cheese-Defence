@@ -8,6 +8,7 @@
 #include "mf/sfx.h"
 
 #include "headers/data.h"
+#include "headers/graphics.h"
 #include "headers/logic.h"
 
 int main(int argc, char* argv[]) {
@@ -95,7 +96,7 @@ int main(int argc, char* argv[]) {
         SDL_RenderClear(window.renderer);
 
         // Draw stuff
-        draw::DrawRect(window.renderer, {50, 50, 50, 50}, {255, 0, 0});
+        graphics::DrawCheese(window, game);
 
         // Finish frame
         core::UpdateTimers();
