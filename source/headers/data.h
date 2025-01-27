@@ -2,10 +2,17 @@
 
 namespace data {
     struct Cheese {
-        int unrot = 0; // How much cheese is rotten
+        int state = 0; // Read at bottom of file
     };
 
     struct Game {
         Cheese map[8][2] = {};
     };
 }
+
+/* State values:
+0 - Rotten cheese (default)
+1 - Mostly rotten cheese
+2 - Little rotten cheese
+3 - Fresh cheese
+ */
