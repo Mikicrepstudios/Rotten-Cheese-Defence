@@ -1,4 +1,3 @@
 - Click to unrot cheese
-- Cheese disappearing
 - Game over screen
 - Scoring system
