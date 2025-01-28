@@ -74,6 +74,7 @@ int main(int argc, char* argv[]) {
                 case SDL_MOUSEBUTTONDOWN:
                     // Mouse button is held
                     window.mouse.isDown = true;
+                    logic::UnRotCheese(window, game);
                     break;
                 case SDL_MOUSEBUTTONUP:
                     // Mouse button is released
