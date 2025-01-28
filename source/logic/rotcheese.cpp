@@ -13,8 +13,6 @@ namespace logic {
         if(game.map[x][y].state != 3)
             game.map[x][y].state += 1;
 
-        std::cout << "Cheese at " << x << ", " << y << " is now " << game.map[x][y].state << std::endl;
-
         //if(game.map[x][y].state == 3)
             // Add timer here to remove cheese
     }
