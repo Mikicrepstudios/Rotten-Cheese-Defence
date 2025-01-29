@@ -135,7 +135,7 @@ int main(int argc, char* argv[]) {
         core::UpdateTimers();
         SDL_RenderPresent(window.renderer);
         core::TimeCount(window);
-        SDL_Delay(1000 / window.fps);
+        //SDL_Delay(1000 / window.fps);
     }
 
     // Cleanup variables from memory
