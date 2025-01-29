@@ -75,6 +75,7 @@ namespace logic {
             SDL_Rect selectText = {window.width / 2 - 200, window.height / 2 - 150, 400, 100};
 
             SDL_Rect easyRect = {window.width / 2 - 200, window.height / 2 - 50, 100, 100};
+            SDL_Rect normalRect = {window.width / 2 - 100, window.height / 2 - 50, 100, 100};
 
             // Draw stuff
             draw::DrawText(window.renderer, window.font, title, "Rotten Cheese Defence", colors::white);
@@ -82,6 +83,9 @@ namespace logic {
 
             draw::DrawButton(window.renderer, easyRect, colors::lightgreen, window.mouse.x, window.mouse.y);
             draw::DrawText(window.renderer, window.font, easyRect, "Easy", colors::white);
+
+            draw::DrawButton(window.renderer, normalRect, colors::orange, window.mouse.x, window.mouse.y);
+            draw::DrawText(window.renderer, window.font, normalRect, "Normal", colors::white);
 
             // Finish frame
             SDL_RenderPresent(window.renderer);
