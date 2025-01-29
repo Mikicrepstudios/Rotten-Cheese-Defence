@@ -41,6 +41,9 @@ int main(int argc, char* argv[]) {
     assets::LoadMainAssets(window, mainAssets);
     assets::LoadCheeseAssets(window, cheeseAssets);
 
+    // Other
+    SDL_Rect resetButton = {window.width / 2 - 300, window.height / 2, 600, 100};
+
     // Clear map
     logic::ClearMap(game);
 
@@ -76,6 +79,12 @@ int main(int argc, char* argv[]) {
                     // Mouse button is held
                     window.mouse.isDown = true;
                     logic::UnRotCheese(window, game);
+
+                    if(game.gameOver) {
+                        if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, resetButton)) {
+                            logic::Reset(game);
+                        }
+                    }
                     break;
                 case SDL_MOUSEBUTTONUP:
                     // Mouse button is released
@@ -118,7 +127,6 @@ int main(int argc, char* argv[]) {
 
         if(game.gameOver) {
             graphics::DrawGameOver(window, game);
-            logic::Reset(game);
         }
 
         // Finish frame
