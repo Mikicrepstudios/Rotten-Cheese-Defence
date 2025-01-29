@@ -22,6 +22,7 @@ namespace logic {
             SDL_Rect insaneRect = {window.width / 2 + 100, window.height / 2 - 50, 100, 100};
 
             SDL_Rect devRect = {0, window.height - 50, 500, 50};
+            SDL_Rect publisherRect = {0, window.height - 100, 500, 50};
 
             // Prepare next frame
             SDL_GetMouseState(&window.mouse.x, &window.mouse.y);
@@ -112,6 +113,7 @@ namespace logic {
             draw::DrawText(window.renderer, window.font, insaneRect, "Insane", colors::white);
 
             draw::DrawText(window.renderer, window.font, devRect, "Developer: Mikicrep", colors::white);
+            draw::DrawText(window.renderer, window.font, publisherRect, "Publisher: Mikicrep Studios", colors::white);
 
             // Finish frame
             SDL_RenderPresent(window.renderer);
