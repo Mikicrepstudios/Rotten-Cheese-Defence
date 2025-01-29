@@ -7,6 +7,7 @@ namespace data {
 
     struct Game {
         Cheese map[8][2] = {};
+        int score = 0;
     };
 }
 
