@@ -45,7 +45,8 @@ int main(int argc, char* argv[]) {
     logic::ClearMap(game);
 
     // Add timers
-    core::AddTimer(25, [&game]() { logic::RotCheese(game); }, true);
+    game.interval = 50;
+    core::AddTimer(game.interval, [&game]() { logic::RotCheese(game); }, true);
 
     while(running) {
         // Prepare next frame
@@ -117,6 +118,7 @@ int main(int argc, char* argv[]) {
 
         if(game.gameOver) {
             graphics::DrawGameOver(window, game);
+            logic::Reset(game);
         }
 
         // Finish frame

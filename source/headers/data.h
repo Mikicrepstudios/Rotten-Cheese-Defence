@@ -1,5 +1,7 @@
 #pragma once
 
+#include <cstdint>
+
 namespace data {
     struct Cheese {
         int state = 0; // Read at bottom of file
@@ -9,6 +11,7 @@ namespace data {
         Cheese map[8][2] = {};
         int score = 0;
         bool gameOver = false;
+        uint32_t interval = 750;
     };
 }
 
