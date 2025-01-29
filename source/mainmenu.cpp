@@ -76,6 +76,8 @@ namespace logic {
 
             SDL_Rect easyRect = {window.width / 2 - 200, window.height / 2 - 50, 100, 100};
             SDL_Rect normalRect = {window.width / 2 - 100, window.height / 2 - 50, 100, 100};
+            SDL_Rect hardRect = {window.width / 2, window.height / 2 - 50, 100, 100};
+            SDL_Rect insaneRect = {window.width / 2 + 100, window.height / 2 - 50, 100, 100};
 
             // Draw stuff
             draw::DrawText(window.renderer, window.font, title, "Rotten Cheese Defence", colors::white);
@@ -86,6 +88,12 @@ namespace logic {
 
             draw::DrawButton(window.renderer, normalRect, colors::orange, window.mouse.x, window.mouse.y);
             draw::DrawText(window.renderer, window.font, normalRect, "Normal", colors::white);
+
+            draw::DrawButton(window.renderer, hardRect, colors::red, window.mouse.x, window.mouse.y);
+            draw::DrawText(window.renderer, window.font, hardRect, "Hard", colors::white);
+
+            draw::DrawButton(window.renderer, insaneRect, colors::purple, window.mouse.x, window.mouse.y);
+            draw::DrawText(window.renderer, window.font, insaneRect, "Insane", colors::white);
 
             // Finish frame
             SDL_RenderPresent(window.renderer);
