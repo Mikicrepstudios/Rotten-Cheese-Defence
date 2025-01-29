@@ -1,6 +1,7 @@
 #include "mf/core.h"
 #include "mf/colors.h"
 #include "mf/graphics.h"
+#include "mf/logic.h"
 
 #include "data.h"
 
@@ -10,6 +11,15 @@ namespace logic {
         SDL_Event event = {};
 
         while(running) {
+            // Rects
+            SDL_Rect title = {window.width / 2 - 300, 0, 600, 100};
+            SDL_Rect selectText = {window.width / 2 - 200, window.height / 2 - 150, 400, 100};
+
+            SDL_Rect easyRect = {window.width / 2 - 200, window.height / 2 - 50, 100, 100};
+            SDL_Rect normalRect = {window.width / 2 - 100, window.height / 2 - 50, 100, 100};
+            SDL_Rect hardRect = {window.width / 2, window.height / 2 - 50, 100, 100};
+            SDL_Rect insaneRect = {window.width / 2 + 100, window.height / 2 - 50, 100, 100};
+
             // Prepare next frame
             SDL_GetMouseState(&window.mouse.x, &window.mouse.y);
 
@@ -34,12 +44,23 @@ namespace logic {
                         break;
 
                     case SDL_MOUSEBUTTONDOWN:
-                        running = false;
+                        if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, easyRect)) {
+                            game.interval = 1000;
+                            running = false;
+                        }
+                        else if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, normalRect)) {
+                            game.interval = 750;
+                            running = false;
+                        }
+                        else if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, hardRect)) {
+                            game.interval = 500;
+                            running = false;
+                        }
+                        else if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, insaneRect)) {
+                            game.interval = 250;
+                            running = false;
+                        }
 
-                        break;
-                    case SDL_MOUSEBUTTONUP:
-                        // Mouse button is released
-                        window.mouse.isDown = false;
                         break;
 
                     case SDL_KEYDOWN:
@@ -69,15 +90,6 @@ namespace logic {
             // Clear frame
             SDL_SetRenderDrawColor(window.renderer, 0, 0, 0, 255);
             SDL_RenderClear(window.renderer);
-
-            // Rects
-            SDL_Rect title = {window.width / 2 - 300, 0, 600, 100};
-            SDL_Rect selectText = {window.width / 2 - 200, window.height / 2 - 150, 400, 100};
-
-            SDL_Rect easyRect = {window.width / 2 - 200, window.height / 2 - 50, 100, 100};
-            SDL_Rect normalRect = {window.width / 2 - 100, window.height / 2 - 50, 100, 100};
-            SDL_Rect hardRect = {window.width / 2, window.height / 2 - 50, 100, 100};
-            SDL_Rect insaneRect = {window.width / 2 + 100, window.height / 2 - 50, 100, 100};
 
             // Draw stuff
             draw::DrawText(window.renderer, window.font, title, "Rotten Cheese Defence", colors::white);
