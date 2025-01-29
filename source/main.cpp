@@ -47,8 +47,10 @@ int main(int argc, char* argv[]) {
     // Clear map
     logic::ClearMap(game);
 
+    // Main menu
+    logic::MainMenu(window, game);
+
     // Add timers
-    game.interval = 50;
     core::AddTimer(game.interval, [&game]() { logic::RotCheese(game); }, true);
 
     while(running) {
