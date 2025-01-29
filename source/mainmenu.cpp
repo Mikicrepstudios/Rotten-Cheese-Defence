@@ -72,9 +72,11 @@ namespace logic {
 
             // Rects
             SDL_Rect title = {window.width / 2 - 300, 0, 600, 100};
+            SDL_Rect selectText = {window.width / 2 - 200, window.height / 2 - 200, 400, 100};
 
             // Draw stuff
             draw::DrawText(window.renderer, window.font, title, "Rotten Cheese Defence", colors::white);
+            draw::DrawText(window.renderer, window.font, selectText, "Select difficulty", colors::white);
 
             // Finish frame
             SDL_RenderPresent(window.renderer);
