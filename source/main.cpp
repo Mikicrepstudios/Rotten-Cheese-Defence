@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
     logic::ClearMap(game);
 
     // Add timers
-    core::AddTimer(750, [&game]() { logic::RotCheese(game); }, true);
+    core::AddTimer(25, [&game]() { logic::RotCheese(game); }, true);
 
     while(running) {
         // Prepare next frame
@@ -116,7 +116,7 @@ int main(int argc, char* argv[]) {
         graphics::DrawScore(window, game.score);
 
         if(game.gameOver) {
-            draw::DrawText(window.renderer, window.font, {window.width / 2 - 100, window.height / 2 - 50, 200, 100}, "Game Over", colors::red);
+            graphics::DrawGameOver(window, game);
         }
 
         // Finish frame
