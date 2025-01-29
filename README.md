@@ -2,7 +2,7 @@
 ## Made for Weird Game Jam #7
 ### By Mikicrep
 
-Made using the [Mikicrep Framework](https://github.com/Mikicrepstudios/Mikicrep-Framework).
+Made using the [Mikicrep Framework](https://github.com/Mikicrepstudios/Mikicrep-Framework) 1.6.0M.
 
 ## Supported Platforms
 - Linux
