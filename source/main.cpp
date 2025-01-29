@@ -115,6 +115,10 @@ int main(int argc, char* argv[]) {
         draw::DrawLine(window.renderer, {window.mouse.x, window.mouse.y}, {window.width / 2, window.height - 100}, 10, colors::pink);
         graphics::DrawScore(window, game.score);
 
+        if(game.gameOver) {
+            draw::DrawText(window.renderer, window.font, {window.width / 2 - 100, window.height / 2 - 50, 200, 100}, "Game Over", colors::red);
+        }
+
         // Finish frame
         core::UpdateTimers();
         SDL_RenderPresent(window.renderer);
