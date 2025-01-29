@@ -21,6 +21,8 @@ namespace logic {
             SDL_Rect hardRect = {window.width / 2, window.height / 2 - 50, 100, 100};
             SDL_Rect insaneRect = {window.width / 2 + 100, window.height / 2 - 50, 100, 100};
 
+            SDL_Rect devRect = {0, window.height - 50, 500, 50};
+
             // Prepare next frame
             SDL_GetMouseState(&window.mouse.x, &window.mouse.y);
 
@@ -108,6 +110,8 @@ namespace logic {
 
             draw::DrawButton(window.renderer, insaneRect, colors::purple, window.mouse.x, window.mouse.y);
             draw::DrawText(window.renderer, window.font, insaneRect, "Insane", colors::white);
+
+            draw::DrawText(window.renderer, window.font, devRect, "Developer: Mikicrep", colors::white);
 
             // Finish frame
             SDL_RenderPresent(window.renderer);
