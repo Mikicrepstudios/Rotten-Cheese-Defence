@@ -16,7 +16,7 @@ namespace logic {
 
                     switch(originalState) {
                         case 0:
-                            game.score -= 50;
+                            game.score -= 300;
                             break;
                         case 1:
                             game.score += 100;
@@ -25,7 +25,7 @@ namespace logic {
                             game.score += 50;
                             break;
                         case 3:
-                            game.score -= 100;
+                            game.score -= 500;
                             break;
                     }
                 }
