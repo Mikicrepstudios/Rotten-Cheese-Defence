@@ -1,5 +1,4 @@
 - Game over screen
-- Scoring system
 - Dont waste timer on cheese which wasnt touched
 
 - Main menu
