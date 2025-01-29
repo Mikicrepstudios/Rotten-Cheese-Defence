@@ -7,6 +7,8 @@
 
 namespace logic {
     void RotCheese(data::Game &game) {
+        if(game.gameOver) return; // Dont waste precious CPU if game is over
+
         int x = logic::GenRanNum(0, 7);
         int y = logic::GenRanNum(0, 1);
 
