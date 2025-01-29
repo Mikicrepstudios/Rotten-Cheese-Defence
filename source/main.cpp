@@ -45,7 +45,7 @@ int main(int argc, char* argv[]) {
     logic::ClearMap(game);
 
     // Add timers
-    core::AddTimer(1000, [&game]() { logic::RotCheese(game); }, true);
+    core::AddTimer(750, [&game]() { logic::RotCheese(game); }, true);
 
     while(running) {
         // Prepare next frame
