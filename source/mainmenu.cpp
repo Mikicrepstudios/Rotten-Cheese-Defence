@@ -13,6 +13,7 @@ namespace logic {
         while(running) {
             // Rects
             SDL_Rect title = {window.width / 2 - 300, 0, 600, 100};
+            SDL_Rect bgSelectRect = {window.width / 2 - 225, window.height / 2 - 165, 450, 240};
             SDL_Rect selectText = {window.width / 2 - 200, window.height / 2 - 150, 400, 100};
 
             SDL_Rect easyRect = {window.width / 2 - 200, window.height / 2 - 50, 100, 100};
@@ -93,6 +94,7 @@ namespace logic {
 
             // Draw stuff
             draw::DrawText(window.renderer, window.font, title, "Rotten Cheese Defence", colors::white);
+            draw::DrawRect(window.renderer, bgSelectRect, colors::gray);
             draw::DrawText(window.renderer, window.font, selectText, "Select difficulty", colors::white);
 
             draw::DrawButton(window.renderer, easyRect, colors::lightgreen, window.mouse.x, window.mouse.y);
