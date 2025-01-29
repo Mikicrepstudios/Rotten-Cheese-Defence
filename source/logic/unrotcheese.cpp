@@ -10,10 +10,11 @@ namespace logic {
                 SDL_Rect cheeseRect = {(50 * (x + 1)) + (x * 100), (60 * (y + 1)) + (y * 100), 100, 100};
                 
                 if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, cheeseRect)) {
+                    int originalState = game.map[x][y].state;
                     if(game.map[x][y].state != 3 && game.map[x][y].state != 4 && game.map[x][y].state != 0)
                         game.map[x][y].state -= 1;
 
-                    switch(game.map[x][y].state) {
+                    switch(originalState) {
                         case 0:
                             game.score -= 50;
                             break;

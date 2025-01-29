@@ -113,6 +113,7 @@ int main(int argc, char* argv[]) {
         graphics::DrawCheese(window, game, cheeseAssets);
         draw::DrawTextureRect(window.renderer, {0, window.height - 200, window.width, 200}, mainAssets.face);
         draw::DrawLine(window.renderer, {window.mouse.x, window.mouse.y}, {window.width / 2, window.height - 100}, 10, colors::pink);
+        graphics::DrawScore(window, game.score);
 
         // Finish frame
         core::UpdateTimers();
