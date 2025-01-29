@@ -12,6 +12,21 @@ namespace logic {
                 if(logic::IsMouseTouching(window.mouse.x, window.mouse.y, cheeseRect)) {
                     if(game.map[x][y].state != 3 && game.map[x][y].state != 4 && game.map[x][y].state != 0)
                         game.map[x][y].state -= 1;
+
+                    switch(game.map[x][y].state) {
+                        case 0:
+                            game.score -= 50;
+                            break;
+                        case 1:
+                            game.score += 100;
+                            break;
+                        case 2:
+                            game.score += 50;
+                            break;
+                        case 3:
+                            game.score -= 100;
+                            break;
+                    }
                 }
             }
         }
