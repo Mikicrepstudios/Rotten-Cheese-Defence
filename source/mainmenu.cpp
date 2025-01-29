@@ -118,7 +118,7 @@ namespace logic {
             draw::DrawText(window.renderer, window.font, devRect, "Developer: Mikicrep", colors::white);
             draw::DrawText(window.renderer, window.font, publisherRect, "Publisher: Mikicrep Studios", colors::white);
 
-            draw::DrawText(window.renderer, window.font, music, "Music: XXXXXXXXXX", colors::white);
+            draw::DrawText(window.renderer, window.font, music, "Music: hipersalam", colors::white);
             draw::DrawText(window.renderer, window.font, art, "Art: XXXXXXXXXX", colors::white);
 
             // Finish frame

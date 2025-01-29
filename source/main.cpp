@@ -53,6 +53,8 @@ int main(int argc, char* argv[]) {
     // Add timers
     core::AddTimer(game.interval, [&game]() { logic::RotCheese(game); }, true);
 
+    sfx::PlayBGMusic("assets/music.mp3");
+
     while(running) {
         // Prepare next frame
         SDL_GetMouseState(&window.mouse.x, &window.mouse.y);
